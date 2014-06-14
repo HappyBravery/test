@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./../jquery-1.8.0.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var data = $.parseJSON('<?php echo json_encode(array(1 => array('a' => 11, 'b' => 22), 2 => array('c' => 33, 'd' => 44)));?>');
+	$.ajax({
+	   type: "POST",
+	   url: "index.php",
+	   data: data,
+	   success: function(msg){
+	     alert( "Data Saved: " + msg );
+	   }
+	});
+</script>
+</body>
+</html>
